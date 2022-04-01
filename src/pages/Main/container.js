@@ -1,25 +1,10 @@
-import { connect } from "react-redux";
-import { Main } from "./index";
-import { toggleTodo, removeTodo, editTodo, addTodo } from "../../actions/index";
-import { visibilityFilters } from "../../constants/actions";
-import { setVisibilityFilter } from "../../actions/index";
-
-const getEditTodo = (todos) => {
-  return todos.find((item) => item.clicked === true);
-};
-
-const getVisibleTodos = (todos, filter) => {
-  switch (filter) {
-    case visibilityFilters.SHOW_ALL:
-      return todos;
-    case visibilityFilters.SHOW_ACTIVE:
-      return todos.filter((todo) => !todo.completed);
-    case visibilityFilters.SHOW_COMPLETED:
-      return todos.filter((todo) => todo.completed);
-    default:
-      throw new Error("Unknown filter " + filter);
-  }
-};
+import { connect } from 'react-redux';
+import Main from './index';
+import {
+  toggleTodo, removeTodo, editTodo, addTodo,
+  setVisibilityFilter,
+} from '../../actions/index';
+import { getEditTodo, getVisibleTodos } from '../../helpers';
 
 const mapStateToProps = (state) => ({
   todo: getEditTodo(state.todos),
@@ -33,9 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
   removeTodo: (id) => dispatch(removeTodo(id)),
   editTodo: (id, text, clicked) => dispatch(editTodo(id, text, clicked)),
   setVisibilityFilter: (filter) => dispatch(setVisibilityFilter(filter)),
-  setClickedTodo: (todo) => {
-    return dispatch(editTodo(todo.id, todo.text, true));
-  },
+  setClickedTodo: (todo) => dispatch(editTodo(todo.id, todo.text, true)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

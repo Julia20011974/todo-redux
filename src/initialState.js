@@ -1,6 +1,8 @@
-import { visibilityFilters } from "./constants/actions";
+import { visibilityFilters } from './constants/actions';
 
-export const initialState = {
-  visibilityFilter: visibilityFilters.SHOW_ALL,
+const initialState = {
+  visibilityFilter: visibilityFilters[0],
   todos: [],
 };
+
+export default initialState;

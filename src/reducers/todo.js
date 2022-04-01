@@ -3,9 +3,9 @@ import {
   EDIT_TODO,
   REMOVE_TODO,
   TOGGLE_TODO,
-} from "../constants/actions";
+} from '../constants/actions';
 
-export function todo(todos, action) {
+function todo(todos, action) {
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -18,23 +18,21 @@ export function todo(todos, action) {
         },
       ];
     case TOGGLE_TODO:
-      return todos.map((todo) => {
-        if (todo.id === action.id) {
-          return Object.assign({}, todo, {
-            completed: !todo.completed,
-          });
+      return todos.map((item) => {
+        if (item.id === action.id) {
+          return { ...item, completed: !item.completed };
         }
-        return todo;
+        return item;
       });
     case REMOVE_TODO:
-      return todos.filter((todo) => todo.id !== action.id);
+      return todos.filter((item) => item.id !== action.id);
     case EDIT_TODO:
-      return todos.map((todo) =>
-        todo.id === action.id
-          ? { ...todo, text: action.text, clicked: action.clicked }
-          : todo
-      );
+      return todos.map((item) => (item.id === action.id
+        ? { ...item, text: action.text, clicked: action.clicked }
+        : item));
     default:
       return todos;
   }
 }
+
+export default todo;

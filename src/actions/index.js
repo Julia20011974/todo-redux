@@ -4,33 +4,27 @@ import {
   REMOVE_TODO,
   SET_VISIBILITY_FILTER,
   TOGGLE_TODO,
-} from "../constants/actions";
+} from '@constants';
 
 let nextTodoId = 0;
 
-export const addTodo = (text) => {
-  return {
-    type: ADD_TODO,
-    id: nextTodoId++,
-    text,
-  };
-};
+export const addTodo = (text) => ({
+  type: ADD_TODO,
+  id: nextTodoId++,
+  text,
+});
 
-export const editTodo = (id, text, clicked) => {
-  return {
-    type: EDIT_TODO,
-    id,
-    text,
-    clicked,
-  };
-};
+export const editTodo = (id, text, clicked) => ({
+  type: EDIT_TODO,
+  id,
+  text,
+  clicked,
+});
 
-export const removeTodo = (id) => {
-  return {
-    type: REMOVE_TODO,
-    id,
-  };
-};
+export const removeTodo = (id) => ({
+  type: REMOVE_TODO,
+  id,
+});
 
 export const setVisibilityFilter = (filter) => ({
   type: SET_VISIBILITY_FILTER,

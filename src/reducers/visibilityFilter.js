@@ -1,6 +1,6 @@
-import { SET_VISIBILITY_FILTER } from "../constants/actions";
+import { SET_VISIBILITY_FILTER } from '../constants/actions';
 
-export function visibilityFilter(state, action) {
+function visibilityFilter(state, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return action.filter;
@@ -8,3 +8,4 @@ export function visibilityFilter(state, action) {
       return state;
   }
 }
+export default visibilityFilter;
