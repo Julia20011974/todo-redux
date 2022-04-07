@@ -22,7 +22,11 @@
       "alias": {
         "map": [
           ["@/components", "./src/components"],
-          ["@/constants", "./src/constants"]
+          ["@/constants", "./src/constants"],
+          ["@/actions", "./src/actions"],
+          ["@/helpers", "./src/helpers"],
+          ["@/pages", "./src/pages"],
+          ["@/reducers", "./src/reducers"]
         ],
         "extensions": [".js", ".jsx", ".json", ".svg"]
       }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { visibilityFilters } from '../../constants/actions';
+import { visibilityFilters } from '@/constants/actions';
 
 function ControlPanel({ active, setVisibilityFilter }) {
   const choiceFilter = (filter) => {
