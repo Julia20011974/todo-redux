@@ -4,7 +4,7 @@ import {
   REMOVE_TODO,
   SET_VISIBILITY_FILTER,
   TOGGLE_TODO,
-} from '@constants';
+} from '@/constants';
 
 let nextTodoId = 0;
 

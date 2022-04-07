@@ -5,6 +5,9 @@
     "paths":{
       "@/components/*": ["components/*"],
       "@/constants/*": ["/constants/index/*"],
+      "@/helpers/*": ["/helpers/index/*"],
+      "@/pages/*": ["/pages/index/*"],
+      "@/reducers/*": ["/reducers/index/*"]
     }
   },
   "include": ["src"],
